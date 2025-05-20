@@ -1,0 +1,16 @@
+{
+  "common": {
+    "args": {
+      "dataset": "Crypt",
+      "test_outdir": "best",
+      "featuresdir": "inputs/fine_tuning/pcode_sog",
+      "feature_json_name": "graph_func_dict_opc_True.json"
+    }
+  },
+  "sog_0": {
+    "is_testing": true,
+    "args": {
+      "outputdir": "outputs/Finetuned"
+    }
+  }
+}

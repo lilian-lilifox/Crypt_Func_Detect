@@ -1,0 +1,102 @@
+{
+  "is_fine_tuning": true,
+  "training": {
+    "mode": "batch_pair",
+    "loss": "cosine",
+    "opt": "circle",
+    "gama": 10000000.0,
+    "margin": 0.1,
+    "norm_neg_sampling_s": 1.0,
+    "graph_vec_regularizer_weight": 1E-8,
+    "clip_value": 10.0,
+    "learning_rate": 0.00002,
+    "weight_decay": 0.003,
+    "num_epochs": 120,
+    "batch_size": 80,
+    "max_num_nodes": 180000,
+    "max_num_edges": 360000,
+    "n_sim_funcs": 2,
+    "epoh_tolerate": 10000000.0,
+    "clean_cache_after": 10000000.0,
+    "evaluate_after": 1,
+    "print_after": 1250,
+    "df_train_path": "./dbs/Dataset-Finetuning/training_Dataset-Finetuning.csv",
+    "features_train_path": "./inputs/fine_tuning/pcode_sog/Dataset-Finetuning_training/graph_func_dict_opc_True.json"
+  },
+  "validation": {
+    "func_info_csv_path": "./dbs/Dataset-Finetuning/pairs/validation/validation_functions.csv",
+    "features_validation_path": "./inputs/fine_tuning/pcode_sog/Dataset-Finetuning_validation/graph_func_dict_opc_True.json"
+  },
+  "testing": {
+    "infer_tasks": [
+      [
+        "./dbs/Dataset-Finetuning/testing_Dataset-Finetuning.csv",
+        "outputs/experiments/hermes_sim/0/testing_Dataset-Finetuning.pkl"
+      ]
+    ],
+    "features_testing_path": "./inputs/fine_tuning/pcode_sog/Dataset-Finetuning_testing/graph_func_dict_opc_True.json"
+  },
+  "tunning": {
+    "run_test": "best"
+  },
+  "outputdir": "outputs/experiments/hermes_sim/0",
+  "checkpoint_dir": "outputs/experiments/hermes_sim/0",
+  "checkpoint_name": "checkpoint_90.pt",
+  "ggnn_net": {
+    "n_node_feat_dim": 32,
+    "n_edge_feat_dim": 8,
+    "layer_groups": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "n_message_net_layers": 3,
+    "skip_mode": 0,
+    "output_mode": 0,
+    "concat_skip": 0,
+    "num_query": 4,
+    "n_atte_layers": 0,
+    "layer_aggr": "add",
+    "layer_aggr_kwargs": {}
+  },
+  "encoder": {
+    "name": "embed",
+    "embed": {
+      "n_node_feat_dim": 32,
+      "n_edge_feat_dim": 8,
+      "n_node_attr": 461,
+      "n_edge_attr": 4,
+      "n_pos_enc": 8
+    }
+  },
+  "aggr": {
+    "name": "msoftv2",
+    "msoftv2": {
+      "num_querys": 6,
+      "hidden_channels": 64,
+      "n_node_trans": 1,
+      "n_agg_trans": 1,
+      "q_scale": 1.0,
+      "out_method": "lin"
+    }
+  },
+  "model_type": "ggnn",
+  "used_subgraphs": [
+    1,
+    2,
+    3
+  ],
+  "max_vertices": -1,
+  "edge_feature_dim": 8,
+  "features_type": "opc",
+  "bb_features_size": 200,
+  "device": "cuda",
+  "batch_size": 100,
+  "seed": 11,
+  "args": {
+    "featuresdir": "./inputs/fine_tuning/pcode_sog"
+  }
+}
