@@ -3,6 +3,8 @@
 
 env
 
+bin/*
+
 IDBs/Dataset-Crypt/*
 IDBs/Dataset-Finetuning/*
 
@@ -13,7 +15,7 @@ DBs/Dataset-Finetuning/features/testing/*
 DBs/Dataset-Finetuning/features/validation/*
 DBs/Dataset-Finetuning/pairs/training/*
 DBs/Dataset-Finetuning/pairs/testing/*
-DBS/Dataset-Finetuning/pairs/validation/*
+DBs/Dataset-Finetuning/pairs/validation/*
 DBs/Dataset-Crypt/*.csv
 DBs/Dataset-Crypt/features/*
 DBs/Dataset-Crypt/pairs/*
@@ -21,3 +23,5 @@ DBs/Dataset-Crypt/pairs/*
 inputs/fine_tuning/*
 
 outputs/Crypt/*
+
+!**/.gitkeep
