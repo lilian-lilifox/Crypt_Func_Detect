@@ -20,4 +20,4 @@ DBs/Dataset-Crypt/pairs/*
 
 inputs/fine_tuning/*
 
-outputs/Crypt
+outputs/Crypt/*
